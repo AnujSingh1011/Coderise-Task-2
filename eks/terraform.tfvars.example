@@ -1,0 +1,19 @@
+# ── Copy this file to terraform.tfvars and fill in your values ──
+# terraform.tfvars is gitignored to avoid leaking account-specific data.
+
+aws_region  = "us-east-1"
+project     = "myapp"
+environment = "dev"
+owner       = "platform-team"
+
+kubernetes_version = "1.30"
+
+vpc_cidr  = "10.0.0.0/16"
+az_count  = 2
+
+# t3.medium = 2 vCPU / 4 GB RAM — fine for dev workloads
+node_instance_types = ["t3.medium"]
+node_capacity_type  = "ON_DEMAND"
+node_desired_size   = 2
+node_min_size       = 1
+node_max_size       = 4
